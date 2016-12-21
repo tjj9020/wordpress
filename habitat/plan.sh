@@ -13,15 +13,12 @@ pkg_svc_run="nginx"
 pkg_svc_user="hab"
 pkg_expose="80 443"
 
+
 do_build(){
   return 0
 }
 
 do_install(){
-  rm -fr $HAB_CACHE_SRC_PATH/$pkg_name/wp-config-sample.php
-  rm -fr $HAB_CACHE_SRC_PATH/$pkg_name/readme.html
-  rm -fr $HAB_CACHE_SRC_PATH/$pkg_name/license.txt
-
-  cp -r $HAB_CACHE_SRC_PATH/$pkg_name/* ${pkg_prefix}
-  cp $pkg_svc_path/config/wp-config.php ${pkg_prefix}
+  cp -R $HAB_CACHE_SRC_PATH/wordpress/ "${pkg_prefix}/static"
+  rm -fr ${pkg_prefix}/static/license.txt ${pkg_prefix}/static/readme.html ${pkg_prefix}/static/wp-config-sample.php
 }
