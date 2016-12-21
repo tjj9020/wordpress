@@ -2,5 +2,5 @@
 
 exec 2>&1
 
-exec nginx -c {{pkg.svc_var_path}}/conf/nginx.conf
+exec nginx -c {{pkg.svc_config_path}}/nginx.conf
 
