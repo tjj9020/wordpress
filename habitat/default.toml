@@ -1,4 +1,5 @@
 [http]
+user = "hab"
 worker_processes = 1
 worker_connections = 1024
 sendfile = "on"
@@ -7,4 +8,9 @@ tcp_nodelay = "on"
 keepalive_timeout = 60
 gzip = "off"
 
+[fpm]
+user = "hab"
+group = "hab"
+max_children = 10
+max_requests = 2048
 
