@@ -7,12 +7,10 @@ pkg_source="https://wordpress.org/$pkg_name-$pkg_version.tar.gz"
 pkg_shasum=7eae27ff70716dae2d2ba58280f2832fd70a208c9cdaf29ab36ac789c14d6977
 pkg_deps=(
   pftim/php71
-  core/nginx
+  pftim/nginx
 )
-pkg_svc_run="nginx"
-pkg_svc_user="hab"
-pkg_expose="80 443"
-
+pkg_expose="8080"
+pkg_svc_user="root"
 
 do_build(){
   return 0
