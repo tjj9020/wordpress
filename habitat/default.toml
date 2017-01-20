@@ -7,10 +7,6 @@ tcp_nopush = "on"
 tcp_nodelay = "on"
 keepalive_timeout = 60
 gzip = "off"
-
-[fpm]
-user = "hab"
-group = "hab"
-max_children = 10
-max_requests = 2048
+fpm_host = "172.17.0.3"
+fpm_port = 8000
 

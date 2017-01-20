@@ -1,0 +1,14 @@
+version: "2"
+services:
+  wordpress:
+    image: pftim/wordpress:latest
+    command:  --peer 172.18.0.2 --bind fpm:php71.default
+    depends_on:
+      - php
+    ports:
+      - "80:80"
+    links:
+      - php
+  php:
+    image: pftim/php71:latest
+

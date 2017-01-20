@@ -2,6 +2,5 @@
 
 exec 2>&1
 
-exec php-fpm -c {{pkg.svc_config_path}}/php.ini -y {{pkg.svc_config_path}}/php-fpm.conf -F
-exec nginx -c {{pkg.svc_config_path}}/nginx.conf
+exec nginx -c {{pkg.svc_config_path}}/nginx.conf 
 
